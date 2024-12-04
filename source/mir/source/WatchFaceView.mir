@@ -1,0 +1,188 @@
+[ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 1; ]
+import Toybox.Application;
+[ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 2; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 3; ]
+import Toybox.Lang;
+[ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 4; ]
+import Toybox.System;
+[ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 5; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 7; ]
+class WatchFaceView extends WatchUi.WatchFace{
+    [ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 9; ]
+    function initialize() as Void {
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_9_26_11_4_start:
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 10 8 ]
+        %tmp.2 = getv ? :WatchFace;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_9_26_11_4_stop:
+    }
+    [ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 14; ]
+    function onLayout(dc as Dc) as Void {
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_14_40_16_4_start:
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 15 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        %tmp.4 = getv ? :Rez;
+        %tmp.5 = getv %tmp.4 :Layouts;
+        %tmp.6 = getv function %tmp.5 :WatchFace;
+        %tmp.8 = lgetv %dc;
+        %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
+        invoke %tmp.1 %tmp.2(%tmp.9);
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_14_40_16_4_stop:
+    }
+    [ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 21; ]
+    function onShow() as Void {
+    }
+    [ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 25; ]
+    function onUpdate(dc as Dc) as Void {
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_25_40_50_4_start:
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 26 8 ]
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "testing output";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 28 8 ]
+        [ "C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_25_40_50_4_start" "C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_25_40_50_4_stop" ]
+        %timeFormat.1 = local;
+        %tmp.4 = "$1$:$2$";
+        lputv %timeFormat.1 %tmp.4;
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 29 8 ]
+        [ "C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_25_40_50_4_start" "C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_25_40_50_4_stop" ]
+        %clockTime.2 = local;
+        %tmp.5 = getm $.Toybox.System;
+        %tmp.6 = getv function %tmp.5 :getClockTime;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %clockTime.2 %tmp.7;
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 30 8 ]
+        [ "C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_25_40_50_4_start" "C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_25_40_50_4_stop" ]
+        %hours.3 = local;
+        %tmp.8 = lgetv %clockTime.2;
+        %tmp.9 = getv %tmp.8 :hour;
+        lputv %hours.3 %tmp.9;
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 31 8 ]
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_31_8_40_8_if_stmt:
+        %tmp.10 = getm $.Toybox.System;
+        %tmp.11 = getv function %tmp.10 :getDeviceSettings;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        %tmp.13 = getv %tmp.12 :is24Hour;
+        %tmp.14 = not %tmp.13;
+        bf %tmp.14 @C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_31_8_40_8_if_false;
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_31_8_40_8_if_true:
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_31_50_35_8_start:
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 32 12 ]
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_32_12_34_12_if_stmt:
+        %tmp.16 = lgetv %hours.3;
+        %tmp.17 = 12;
+        %tmp.18 = gt %tmp.16 %tmp.17;
+        bf %tmp.18 @C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_32_12_34_12_if_end;
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_32_12_34_12_if_true:
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_32_28_34_12_start:
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 33 16 ]
+        %tmp.20 = lgetv %hours.3;
+        %tmp.21 = 12;
+        %tmp.22 = sub %tmp.20 %tmp.21;
+        lputv %hours.3 %tmp.22;
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_32_28_34_12_stop:
+        goto @C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_32_12_34_12_if_end;
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_32_12_34_12_if_end:
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_31_50_35_8_stop:
+        goto @C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_31_8_40_8_if_end;
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_31_8_40_8_if_false:
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_35_15_40_8_start:
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 36 12 ]
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_36_12_39_12_if_stmt:
+        %tmp.23 = getm $.Toybox.Application;
+        %tmp.24 = getv %tmp.23 :Properties;
+        %tmp.25 = getv function %tmp.24 :getValue;
+        %tmp.26 = "UseMilitaryFormat";
+        %tmp.27 = invoke %tmp.24 %tmp.25(%tmp.26);
+        bf %tmp.27 @C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_36_12_39_12_if_end;
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_36_12_39_12_if_true:
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_36_70_39_12_start:
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 37 16 ]
+        %tmp.28 = "$1$$2$";
+        lputv %timeFormat.1 %tmp.28;
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 38 16 ]
+        %tmp.29 = lgetv %hours.3;
+        %tmp.30 = getv function %tmp.29 :format;
+        %tmp.31 = "%02d";
+        %tmp.32 = invoke %tmp.29 %tmp.30(%tmp.31);
+        lputv %hours.3 %tmp.32;
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_36_70_39_12_stop:
+        goto @C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_36_12_39_12_if_end;
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_36_12_39_12_if_end:
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_35_15_40_8_stop:
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_31_8_40_8_if_end:
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 41 8 ]
+        [ "C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_25_40_50_4_start" "C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_25_40_50_4_stop" ]
+        %timeString.4 = local;
+        %tmp.33 = getm $.Toybox.Lang;
+        %tmp.34 = getv function %tmp.33 :format;
+        %tmp.36 = lgetv %timeFormat.1;
+        %tmp.37 = newa 2;
+        %tmp.39 = lgetv %hours.3;
+        %tmp.40 = dup %tmp.37;
+        %tmp.41 = aputv %tmp.40 0 %tmp.39;
+        %tmp.42 = lgetv %clockTime.2;
+        %tmp.43 = getv %tmp.42 :min;
+        %tmp.44 = getv function %tmp.43 :format;
+        %tmp.45 = "%02d";
+        %tmp.46 = invoke %tmp.43 %tmp.44(%tmp.45);
+        %tmp.47 = dup %tmp.41;
+        %tmp.48 = aputv %tmp.47 1 %tmp.46;
+        %tmp.49 = invoke %tmp.33 %tmp.34(%tmp.36, %tmp.48);
+        lputv %timeString.4 %tmp.49;
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 44 8 ]
+        [ "C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_25_40_50_4_start" "C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_25_40_50_4_stop" ]
+        %view.5 = local;
+        %tmp.51 = getv ? :View;
+        %tmp.52 = getv function %tmp.51 :findDrawableById;
+        %tmp.53 = "TimeLabel";
+        %tmp.54 = invoke %tmp.51 %tmp.52(%tmp.53);
+        %tmp.55 = as %tmp.54 Text;
+        lputv %view.5 %tmp.55;
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 45 8 ]
+        %tmp.56 = lgetv %view.5;
+        %tmp.57 = getv function %tmp.56 :setColor;
+        %tmp.58 = getm $.Toybox.Application;
+        %tmp.59 = getv %tmp.58 :Properties;
+        %tmp.60 = getv function %tmp.59 :getValue;
+        %tmp.61 = "ForegroundColor";
+        %tmp.62 = invoke %tmp.59 %tmp.60(%tmp.61);
+        %tmp.63 = as %tmp.62 Number;
+        invoke %tmp.56 %tmp.57(%tmp.63);
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 46 8 ]
+        %tmp.64 = lgetv %view.5;
+        %tmp.65 = getv function %tmp.64 :setText;
+        %tmp.67 = lgetv %timeString.4;
+        invoke %tmp.64 %tmp.65(%tmp.67);
+[ "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc" 49 8 ]
+        %tmp.69 = getv ? :View;
+        %tmp.70 = getv function %tmp.69 :onUpdate;
+        %tmp.72 = lgetv %dc;
+        invoke %tmp.69 %tmp.70(%tmp.72);
+C_Users_caleb_Documents_side_projects_garmin_WatchFace_source_WatchFaceView_mc_25_40_50_4_stop:
+    }
+    [ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 55; ]
+    function onHide() as Void {
+    }
+    [ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 59; ]
+    function onExitSleep() as Void {
+    }
+    [ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 63; ]
+    function onEnterSleep() as Void {
+    }
+}
+[ @file = "C:\Users\caleb\Documents\side_projects\garmin\WatchFace\source\WatchFaceView.mc"; @line = 1; ]
+<init> {
+}
